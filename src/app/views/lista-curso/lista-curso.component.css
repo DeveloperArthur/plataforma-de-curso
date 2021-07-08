@@ -1,0 +1,8 @@
+mat-toolbar, h1, h2, h3, div {
+    padding: 10px;
+}
+
+#listagem {
+    border-style: solid;
+    border-width: 1px;
+}

@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <span>Plataforma de Cursos</span>
+</mat-toolbar>
+
+<h1>Bem vindo, escolha um curso e bons estudos!</h1>
+
+<h2>Cursos Disponíveis:</h2>
+
+<div *ngIf="mostraLoading">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="temCursos">
+    <div id="listagem" *ngFor="let curso of cursos">
+        <h1>{{curso.nome}}</h1>
+        <p>Data do curso: {{curso.dataDeCriacao}}</p>
+        <img src={{curso.linkDaImagem}} width="350px" height="200px">
+        <p>{{curso.descricao}}</p>
+        <button mat-flat-button color="primary" (click)="redirecionaParaCurso(curso)">ACESSAR CURSO</button>
+    </div>
+</div>
+<div *ngIf="!temCursos">
+    <p>Não há cursos cadastrados :(</p>
+</div>
